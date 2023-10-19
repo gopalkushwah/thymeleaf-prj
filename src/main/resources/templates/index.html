@@ -5,23 +5,45 @@
 	<title>Document</title>
 </head>
 <body>
+	
+	<!-- comments in html and thymeleaf  -->
+	<!-- normal html comment -->
+	<!-- -->
+	
+	<!-- thymeleaf comment ==> this comment will not be visible on the browser devloper tool -->
+	<!--/*   */-->
+	
+	
 	<h1>Hello</h1>
 	<h1 th:text="${name}"></h1>
 	
-	<div th:with="a=5,b=20, n=${name}">
-		<h1 th:text="${a}"></h1>
-		<h1 th:text="${b}"></h1>
-		<h1 th:text="${a+b}"></h1>
-		<h1 th:text="${name}"></h1>
-		
-	</div>
+	<ul>
+		<li th:each="n ,status : ${list}">
+			<!--/* <span th:text="${status}+' : '+${n}"></span>  */-->
+			<!--/* <span th:text="${status.index}+' : '+${n}"></span>  */-->
+			<!--/* <span th:text="${status.count}+' : '+${n}"></span> */-->
+			<!--/* <span th:text="${status.count}+' : '+${n}"></span> */-->
+			<!--/* <span th:text="${status.size}+' : '+${n}"></span> */-->
+			<!--/* <span th:text="${status.current}"></span> */-->
+			<!--/* <span th:text="${status.odd}"></span> */-->
+			<!--/* <span th:text="${status.even}"></span> */-->
+			<span th:if="${status.first}" th:text="'this is first = '+ ${n}"></span>
+			
+			<span th:if="${status.last}" th:text="'this is last = '+ ${n}"></span>
+			
+		</li>
+	</ul>
+			<span th:text="${list.size()}"></span>
+		<!--  status ==>
+			status.index ==> 
+			status.count ==> 
+			status.size ==> 
+			status.odd ==> 
+			status.even ==> 
+			status.first ==> 
+			status.last ==> 
+			status.current ==> 
 	
-	
-		<h1 th:text="${#strings.toUpperCase(name)}"></h1>
-		<h1 th:text="${#strings.toLowerCase(name)}"></h1>
-		<h1 th:text="${#strings.length(name)}"></h1>
-		
-		
-		
+	 -->
 </body>
 </html>

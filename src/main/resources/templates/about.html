@@ -7,6 +7,9 @@
 <body>
 	<h1>Hello</h1>
 	<h1 th:text="${name}"></h1>
-	<h1></h1>
+	<table border="1">
+		<tr><th>id</th><th>name</th><th>price</th></tr>
+		<tr th:each="course : ${list}"><td th:text="${course.id}"></td><td th:text="${course.name}"></td><td th:text="${course.price}"></td></tr>
+	</table>
 </body>
 </html>
