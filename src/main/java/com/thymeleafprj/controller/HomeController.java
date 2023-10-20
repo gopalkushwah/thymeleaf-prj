@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.thymeleafprj.model.Course;
@@ -31,5 +32,19 @@ public class HomeController {
 		list.add(new Course(7, "css", 5454));
 		model.addAttribute("list",list);
 		return "about";
+	}
+	
+	
+//	conditional programming in thymeleaf
+	@GetMapping("/condition")
+	public String condition(Model model) {
+		model.addAttribute("isActive",false);
+		
+		model.addAttribute("gender","F");
+		
+		List<Integer> of = List.of(23,32,3);
+		model.addAttribute("myList", of);
+		model.addAttribute("num", 2);
+		return "condition";
 	}
 }
