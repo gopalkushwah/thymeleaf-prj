@@ -1,49 +1,41 @@
 <!doctype html>
-<html lang="en" xmlns="https://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8" />
-	<title>Document</title>
+	<title>Home</title>
 </head>
 <body>
 	
-	<!-- comments in html and thymeleaf  -->
-	<!-- normal html comment -->
-	<!-- -->
-	
-	<!-- thymeleaf comment ==> this comment will not be visible on the browser devloper tool -->
-	<!--/*   */-->
-	
-	
-	<h1>Hello</h1>
-	<h1 th:text="${name}"></h1>
-	
-	<ul>
-		<li th:each="n ,status : ${list}">
-			<!--/* <span th:text="${status}+' : '+${n}"></span>  */-->
-			<!--/* <span th:text="${status.index}+' : '+${n}"></span>  */-->
-			<!--/* <span th:text="${status.count}+' : '+${n}"></span> */-->
-			<!--/* <span th:text="${status.count}+' : '+${n}"></span> */-->
-			<!--/* <span th:text="${status.size}+' : '+${n}"></span> */-->
-			<!--/* <span th:text="${status.current}"></span> */-->
-			<!--/* <span th:text="${status.odd}"></span> */-->
-			<!--/* <span th:text="${status.even}"></span> */-->
-			<span th:if="${status.first}" th:text="'this is first = '+ ${n}"></span>
-			
-			<span th:if="${status.last}" th:text="'this is last = '+ ${n}"></span>
-			
-		</li>
-	</ul>
-			<span th:text="${list.size()}"></span>
-		<!--  status ==>
-			status.index ==> 
-			status.count ==> 
-			status.size ==> 
-			status.odd ==> 
-			status.even ==> 
-			status.first ==> 
-			status.last ==> 
-			status.current ==> 
-	
+	<h1>Home</h1>
+	<!--
+		replace will replace the whole tag with the fragment tag
+		
+		header ==> replaced by ==> header
+		<header th:fragment="header"><h1>Header</h1></header>
 	 -->
+	<header th:replace="header::header"></header>
+	
+	
+	<!--
+		include will include the child content of the fragment tag and the current tags will remain same
+		header ===> inside header tag ===> <h1>Header</h1>
+		<header th:replace="header::header"> <h1>Header</h1> </header>
+	 -->
+	<header th:replace="header::header"></header>
+	
+	
+	<!--
+		insert will insert the whole tag into current tag
+		header ===> inside header tag ===> header inside header
+		<header th:replace="header::header">
+			<header th:fragment="header"><h1>Header</h1></header>
+		</header>
+	 -->
+	<header th:replace="header::header"></header>
+	
+	
+	<footer th:include="footer::footer"></footer>
+	
+	
 </body>
 </html>
