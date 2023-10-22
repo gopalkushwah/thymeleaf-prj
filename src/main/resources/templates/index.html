@@ -1,22 +1,18 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
 <head>
 	<meta charset="UTF-8" />
 	<title>Home</title>
 </head>
 <body>
 	
-	<h1>Home</h1>
-	
-	
-	<!-- 
-		we can pass parameters from one page to another page using thymeleaf fragments parameter
-	-->
-	<footer th:include="footer::footer('Gopal','Kushwah')"></footer>
-	
-	<!-- Comming value from the controller and then passing to another page -->
-	<footer th:include="footer::footer(${title},${subtitle})"></footer>
-	
-	
+	<section>
+		<h1>Welcome to home page </h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus reprehenderit laudantium beatae voluptatibus est voluptates doloribus non tenetur obcaecati placeat nesciunt minus suscipit facere voluptate vitae rerum expedita consequuntur cupiditate atque dolorum. Reiciendis voluptatum illo nulla ex quo eveniet ad id inventore odit perspiciatis vero excepturi temporibus totam molestiae cum?</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus reprehenderit laudantium beatae voluptatibus est voluptates doloribus non tenetur obcaecati placeat nesciunt minus suscipit facere voluptate vitae rerum expedita consequuntur cupiditate atque dolorum. Reiciendis voluptatum illo nulla ex quo eveniet ad id inventore odit perspiciatis vero excepturi temporibus totam molestiae cum?</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus reprehenderit laudantium beatae voluptatibus est voluptates doloribus non tenetur obcaecati placeat nesciunt minus suscipit facere voluptate vitae rerum expedita consequuntur cupiditate atque dolorum. Reiciendis voluptatum illo nulla ex quo eveniet ad id inventore odit perspiciatis vero excepturi temporibus totam molestiae cum?</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus reprehenderit laudantium beatae voluptatibus est voluptates doloribus non tenetur obcaecati placeat nesciunt minus suscipit facere voluptate vitae rerum expedita consequuntur cupiditate atque dolorum. Reiciendis voluptatum illo nulla ex quo eveniet ad id inventore odit perspiciatis vero excepturi temporibus totam molestiae cum?</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus reprehenderit laudantium beatae voluptatibus est voluptates doloribus non tenetur obcaecati placeat nesciunt minus suscipit facere voluptate vitae rerum expedita consequuntur cupiditate atque dolorum. Reiciendis voluptatum illo nulla ex quo eveniet ad id inventore odit perspiciatis vero excepturi temporibus totam molestiae cum?</p>
+	</section>
 </body>
 </html>

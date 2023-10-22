@@ -8,13 +8,18 @@ public class HomeController {
 
 	@RequestMapping("/")
 	public String home(Model model) {
-		model.addAttribute("title","Gopal");
-		model.addAttribute("subtitle","Kushwah");
+		model.addAttribute("title","Home");
 		return "index";
 	}
 	@RequestMapping("/about")
 	public String about(Model model) {
+		model.addAttribute("title","About");
 		return "about";
+	}
+	@RequestMapping("/service")
+	public String service(Model model) {
+		model.addAttribute("title","Service");
+		return "service";
 	}
 	
 }
