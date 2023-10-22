@@ -7,34 +7,15 @@
 <body>
 	
 	<h1>Home</h1>
-	<!--
-		replace will replace the whole tag with the fragment tag
-		
-		header ==> replaced by ==> header
-		<header th:fragment="header"><h1>Header</h1></header>
-	 -->
-	<header th:replace="header::header"></header>
 	
 	
-	<!--
-		include will include the child content of the fragment tag and the current tags will remain same
-		header ===> inside header tag ===> <h1>Header</h1>
-		<header th:replace="header::header"> <h1>Header</h1> </header>
-	 -->
-	<header th:replace="header::header"></header>
+	<!-- 
+		we can pass parameters from one page to another page using thymeleaf fragments parameter
+	-->
+	<footer th:include="footer::footer('Gopal','Kushwah')"></footer>
 	
-	
-	<!--
-		insert will insert the whole tag into current tag
-		header ===> inside header tag ===> header inside header
-		<header th:replace="header::header">
-			<header th:fragment="header"><h1>Header</h1></header>
-		</header>
-	 -->
-	<header th:replace="header::header"></header>
-	
-	
-	<footer th:include="footer::footer"></footer>
+	<!-- Comming value from the controller and then passing to another page -->
+	<footer th:include="footer::footer(${title},${subtitle})"></footer>
 	
 	
 </body>
