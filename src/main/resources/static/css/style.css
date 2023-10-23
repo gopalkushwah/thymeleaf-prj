@@ -1,0 +1,9 @@
+body{
+    background: #e2e2e2;
+}
+img{
+    position: relative;
+    width: 50%;
+    object-fit:scale-down;
+    object-position: left;
+}
